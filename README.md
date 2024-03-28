@@ -76,7 +76,8 @@ cd to `backend` folder (make sure you have activated the correct environment!) a
 
 TA-DA!
 
-**A much easier way to run**
+
+#### # A (slightly) easier way to run
 
 Open `start.txt`, and change the second line `conda activate AI` to 
 
