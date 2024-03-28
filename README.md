@@ -1,20 +1,30 @@
-# 結合路燈及監視器資訊之安全路徑規劃
+# Safe Map: Secure Path Planning Integrating Streetlight and Surveillance Camera Data
 
-## 概述
-在清大學生普遍居住的清大周邊區域中，存在一些暗巷及小道缺少路燈以及監視器，在夜間時段經過並不安全。然而，對於不熟悉路段並使用Google Map進行導航的人來說，時常會被引導到這些較陰暗的路段，引起一些安全上的疑慮。  
+## Abstract
+ When requesting navigation directions, Google Map provided routes based solely on the shortest distance. The routes with shortest distance sometimes considered dimly lit alleys which might be lack of enough streetlights and surveillance cameras, and this may results in a safety considerations.
+ 
+ To address this issue, we have employed route planning algorithms to identify safer routes, taking into account the density of streetlights and surveillance cameras along the way.
 
-有鑑於此，我們希望藉由新竹市政府的路燈及監視器資訊，結合最佳路徑演算法，建立一個平臺提供步行人安全與距離權衡後的安全路徑，為行人點亮回家的路！
+ Implementing area: Taiwan, Hsinchu City (The location of National Tsing Hua University!)
 
-## 資料來源
+
+## Data Resources
+
+### Dataset of Streetlight and Surveillence camera:
 政府資料開放平臺：[新竹市錄影監視系統設置地點](https://data.gov.tw/dataset/67490)  
 新竹市政府資料開放平臺：[新竹市公有道路路燈資料](https://opendata.hccg.gov.tw/OpenDataDetail.aspx?n=1&s=159)  
-開放街圖OpenStreetMap之圖資使用套件：[OSMnx](https://osmnx.readthedocs.io/en/stable/)  
+
+### Street Map Data:
+Python package of OpenStreetMap：[OSMnx](https://osmnx.readthedocs.io/en/stable/)  
 Google Map API：[GoogleCloudPlatform](https://console.cloud.google.com/)  
 
-## 數據前處理及分析
-將使用的監視器及路燈資料格式統一、對監視器及路燈分布進行分析、測試並處理OSM地圖節點資訊，以及進行最佳路徑演算法的測試及比較。  
+## Data Preprocessing and Analysis
+First, we combined the location information from the streetlight and surveillance camera datasets with OpenStreetMap (OSM) data, utilizing the longitude and latitude of each streetlight/surveillance camera.
 
-詳細說明請見`preprocessing+analysis`資料夾之README或[點擊此](https://github.com/Wilson330/Safe_Map/)。
+We employed Kernel Density Estimation to analyze the density of streetlight/surveillance camera in each area. Each node in the OSM graph received a score based on the density of streetlight/surveillance camera surrounding it. This score could influence the outcome of the route optimization algorithms, depending on the security factor chosen by the user.
+
+We tested two different route optimization algorithms (A* Algorithm and Dijkstra's Algorithm) and compared their performances. Dijkstra's Algorithm was chosen for the final web version due to its higher computational speed.
+
 
 ## 如何使用 Safe Map 網頁平臺 
 先進入`safemap-webpage`資料夾，在裡面會有`frontend`及`backend`兩個資料夾，分別存放前端及後端所需的檔案。  
