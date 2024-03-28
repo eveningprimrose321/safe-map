@@ -77,6 +77,12 @@ cd to `backend` folder (make sure you have activated the correct environment!) a
 TA-DA!
 
 ** A much easier way to run **
+Open `start.txt`, and change the second line `conda activate AI` to 
+
+    conda activate YOUR_ENV_NAME
+
+ and rename the file extension `.txt` to `.bat`.
+
 You can just double click the `start.bat` to run this project.
 (But make sure all the package installations and the API key setting have been done well!)
 
