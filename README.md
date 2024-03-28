@@ -26,65 +26,61 @@ We employed Kernel Density Estimation to analyze the density of streetlight/surv
 We tested two different route optimization algorithms (A* Algorithm and Dijkstra's Algorithm) and compared their performances. Dijkstra's Algorithm was chosen for the final web version due to its higher computational speed.
 
 
-## 如何使用 Safe Map 網頁平臺 
-先進入`safemap-webpage`資料夾，在裡面會有`frontend`及`backend`兩個資料夾，分別存放前端及後端所需的檔案。  
+## How to use Safe Map
 
-文件說明請見`frontend`及`backend`資料夾之README或點擊[frontend](https://github.com/Wilson330/Safe_Map/)和[backend](https://github.com/Wilson330/Safe_Map/)。
+In the `safemap-webpage` folder are the `frontend` and `backend` folders. All the needed files are in these folders.
 
-### 1. Frontend 設定
-為了存取Google Map的地圖資訊，請先至Google Cloud Platform申請API key，此動作需要先新開專案，到**API及服務**欄位選取**憑證**並建立**API金鑰**，再將**Maps JavaScript API**啟用即可。(詳細步驟可以搜尋"google api key申請")  
+The `frontend` structure is refered to **trulymittal** [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master).
 
-之前這個API是有每月的額度上限，但現在改為90天的免費計畫，所以我的已經過期了QQ，有興趣可至Google Cloud Platform查看。(Note: 要綁定信用卡才能用喔！)  
+### 1. Frontend Settings
+##### Step 1
+Create an API in the [google developers console](https://console.developers.google.com), make sure to enable billing for the google project. (You can find how to do this by searching "get google api key")  
 
-#### #操作步驟
-建立**Node.js開發環境**並設置**npm** (記得安裝LTS版本比較穩定！)，要注意node.js和npm都有加入環境變數中。  
+##### Step 2
+Build a **Node.js Environment** with installing **Node.js** and **npm**. Make sure that both `Node.js` and `npm` are added in the system environment path.
 
-開啟cmd並切換至`frontend`資料夾，並輸入以下指令以安裝package.json中所有dependencies。  
+To install all the packages used in this project, open cmd and cd to `frontend` folder, enter the following command to install all the packages listed in `package.json` and their dependencies:
 
     npm install
+    
+Or you can also use `yarn`:
 
-於資料夾中建立檔案`.env.local`，並於內部輸入以下內容，其中`key`的部分要修改為前面步驟取得的**Google API key**。
+    yarn install
 
-    REACT_APP_GOOGLE_MAPS_API_KEY = key
+##### Step 3
+Add a .env file or .env.local in the `frontend` folder and add the following content (edit it as a text file) to specify your API key:
 
-如此便完成Frontend設定！
+    REACT_APP_GOOGLE_MAPS_API_KEY=your_api_key_here
+    
 
-### 2. Backend 設定
-#### #操作步驟
-建立osmnx之Python環境 (使用conda)
+### 2. Backend Settings
+Install [osmnx](https://osmnx.readthedocs.io/en/stable/installation.html) and [flask](https://flask.palletsprojects.com/en/3.0.x/installation/)in your python environment.
 
-    conda config --prepend channels conda-forge 
-    conda create -n ox --strict-channel-priority osmnx
 
-此為官方支援的安裝方式，詳細可見[此頁面](https://osmnx.readthedocs.io/en/stable/installation.html)。(**Note:** 也可以使用`pip install osmnx`來進行安裝，但可能會缺少部分套件。)  
-
-切換至ox環境後，安裝所需套件
-
-    pip install -r requirements.txt
-
-如此便完成Backend設定！  
-
-### 3. 執行
+### 3. RUN!!!
 #### #Frontend
-切換至`frontend`資料夾，於使用npm啟動app
+cd to `frontend` folder and run:
 
     npm start
+    
+(or run
+
+    yarn start
+
+if you use yarn in the previous step)
 
 #### #Backend
-切換至`backend`資料夾，並調整至ox環境，於本機啟動伺服器
+cd to `backend` folder (make sure you have activated the correct environment!) and run:
 
     python app.py runserver
 
-即可開始使用！
-
-### 4. 使用
-請輸入**起點**及**終點**之地點名稱，並於右側滑動條調整**安全係數**的大小，越大表示安全性的權重越高，最後點擊**Calculate Route按鈕**即可獲得路徑。  
+TA-DA!
 
 #### 實際使用頁面如下圖：
 ![Webpage](img.PNG "safeRoute")
 
 **Credit:**  
-前端網頁設計及React架構參考自：**trulymittal** 大神的 [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
+The whole `frontend` structure is refered to **trulymittal** 大神的 [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
 
-清大人工智慧課程期末專題  
-組員：工科系碩士班 **李松鴻、許維珅、林子芸、朱惠瑜**
+國立清華大學人工智慧課程期末專題  
+組員：工科系碩士班 **李松鴻、許維珅、林子芸、朱惠瑜** (Special thanks to 詹凱錞)
