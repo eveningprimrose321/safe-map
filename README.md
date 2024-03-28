@@ -91,7 +91,7 @@ You can just double click the `start.bat` to run this project.
 
 
 **Credit:**  
-The whole `frontend` structure is refered to **trulymittal** 大神的 [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
+The whole `frontend` structure is refered to **trulymittal** [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
 
 國立清華大學人工智慧課程期末專題  
 組員：工科系碩士班 **李松鴻、許維珅、林子芸、朱惠瑜** (Special thanks to **詹凱錞**)
