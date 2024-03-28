@@ -33,10 +33,10 @@ In the `safemap-webpage` folder are the `frontend` and `backend` folders. All th
 The `frontend` structure is refered to **trulymittal** [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master).
 
 ### 1. Frontend Settings
-##### Step 1
+#### Step 1
 Create an API in the [google developers console](https://console.developers.google.com), make sure to enable billing for the google project. (You can find how to do this by searching "get google api key")  
 
-##### Step 2
+#### Step 2
 Build a **Node.js Environment** with installing **Node.js** and **npm**. Make sure that both `Node.js` and `npm` are added in the system environment path.
 
 To install all the packages used in this project, open cmd and cd to `frontend` folder, enter the following command to install all the packages listed in `package.json` and their dependencies:
@@ -47,7 +47,7 @@ Or you can also use `yarn`:
 
     yarn install
 
-##### Step 3
+#### Step 3
 Add a .env file or .env.local in the `frontend` folder and add the following content (edit it as a text file) to specify your API key:
 
     REACT_APP_GOOGLE_MAPS_API_KEY=your_api_key_here
