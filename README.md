@@ -76,8 +76,9 @@ cd to `backend` folder (make sure you have activated the correct environment!) a
 
 TA-DA!
 
-#### 實際使用頁面如下圖：
-![Webpage](img.PNG "safeRoute")
+** A much easier way to run **
+You can just double click the `start.bat` to run this project.
+(But make sure all the package installations and the API key setting have been done well!)
 
 **Credit:**  
 The whole `frontend` structure is refered to **trulymittal** 大神的 [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
