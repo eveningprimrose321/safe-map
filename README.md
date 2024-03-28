@@ -77,7 +77,7 @@ cd to `backend` folder (make sure you have activated the correct environment!) a
 TA-DA!
 
 
-#### # A (slightly) easier way to run
+#### #**A (slightly) easier way to run**
 
 Open `start.txt`, and change the second line `conda activate AI` to 
 
@@ -87,6 +87,8 @@ Open `start.txt`, and change the second line `conda activate AI` to
 
 You can just double click the `start.bat` to run this project.
 (But make sure all the package installations and the API key setting have been done well!)
+
+
 
 **Credit:**  
 The whole `frontend` structure is refered to **trulymittal** 大神的 [google-maps-directions-tutorial](https://github.com/trulymittal/google-maps-directions-tutorial/tree/master)  
